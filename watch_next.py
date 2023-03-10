@@ -25,6 +25,12 @@ def watch_next(description):
             max_score = score
             max_title = title.strip()
             max_desc = desc.strip()
+    # display the result        
+    print (f"The most similar movie is {max_title} with a score of {max_score}")
+    print(f'''The synopsis of {max_title} is:
+{max_desc}''')
 
 # assign variables
 target_desc =  "Will he save their world or destroy it? When the Hulk becomes too dangerous for the Earth, the Illuminati trick Hulk into a shuttle and launch him into space to a planet where the Hulk can live in peace. Unfortunately, Hulk land on the planet Sakaar where he is sold into slavery and trained as a gladiator."
+
+watch_next(target_desc)
