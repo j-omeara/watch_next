@@ -13,6 +13,18 @@ def watch_next(description):
     max_score = 0
     max_title = ""
     max_desc = ""
+    
+    # use for loop to compare each movie and store the most similar
+    for movie in movies:
+        # isolate the title and description using the ':' in the source file
+        title, desc = movie.split(':')
+        # compare similarity of movie descriptions and store the data if it is the highes score so far
+        desc_doc = nlp(desc)
+        score = desc_doc.similarity(nlp(description))
+        if score > max_score:
+            max_score = score
+            max_title = title.strip()
+            max_desc = desc.strip()
 
 # assign variables
 target_desc =  "Will he save their world or destroy it? When the Hulk becomes too dangerous for the Earth, the Illuminati trick Hulk into a shuttle and launch him into space to a planet where the Hulk can live in peace. Unfortunately, Hulk land on the planet Sakaar where he is sold into slavery and trained as a gladiator."
